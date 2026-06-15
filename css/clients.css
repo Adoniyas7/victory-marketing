@@ -1,0 +1,73 @@
+/* ===== CLIENT LOGOS ===== */
+.clients {
+  background: var(--primary);
+  padding: 4rem 5%;
+  overflow: hidden;
+}
+
+.clients-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.clients-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+.clients-track {
+  display: flex;
+  animation: clientScroll 25s linear infinite;
+  width: max-content;
+}
+
+.clients-track:hover {
+  animation-play-state: paused;
+}
+
+.client-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  min-width: 180px;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.client-item:hover {
+  opacity: 1;
+}
+
+.client-name {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 1px;
+  white-space: nowrap;
+  user-select: none;
+}
+
+@keyframes clientScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .client-item {
+    padding: 0.75rem 1.5rem;
+    min-width: 140px;
+  }
+
+  .client-name {
+    font-size: 1rem;
+  }
+}
