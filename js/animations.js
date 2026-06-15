@@ -59,7 +59,7 @@ export function initStatCounters() {
 
 /** Scroll reveal animation for cards and process steps */
 export function initScrollReveal() {
-  const selectors = '.mvo-card, .service-card, .why-card, .team-card, .process-step';
+  const selectors = '.mvo-card, .service-card, .why-card, .team-card, .process-step, .portfolio-card';
   const elements = document.querySelectorAll(selectors);
   if (!elements.length) return;
 

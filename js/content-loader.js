@@ -17,7 +17,7 @@ export class ContentLoader {
 
   /** Load all JSON content files in parallel */
   async loadAll() {
-    const [site, hero, about, mission, services, whyUs, process, team, testimonials, contact, footer] =
+    const [site, hero, about, mission, services, whyUs, process, clients, portfolio, team, testimonials, contact, footer] =
       await Promise.all([
         this.loadJSON('site.json'),
         this.loadJSON('hero.json'),
@@ -26,13 +26,15 @@ export class ContentLoader {
         this.loadJSON('services.json'),
         this.loadJSON('why-us.json'),
         this.loadJSON('process.json'),
+        this.loadJSON('clients.json'),
+        this.loadJSON('portfolio.json'),
         this.loadJSON('team.json'),
         this.loadJSON('testimonials.json'),
         this.loadJSON('contact.json'),
         this.loadJSON('footer.json'),
       ]);
 
-    this.data = { site, hero, about, mission, services, whyUs, process, team, testimonials, contact, footer };
+    this.data = { site, hero, about, mission, services, whyUs, process, clients, portfolio, team, testimonials, contact, footer };
     return this.data;
   }
 
@@ -40,9 +42,11 @@ export class ContentLoader {
   renderAll() {
     this.renderNav();
     this.renderHero();
+    this.renderClients();
     this.renderAbout();
     this.renderMission();
     this.renderServices();
+    this.renderPortfolio();
     this.renderWhyUs();
     this.renderProcess();
     this.renderTestimonials();
@@ -50,6 +54,7 @@ export class ContentLoader {
     this.renderCTA();
     this.renderContact();
     this.renderFooter();
+    this.renderWhatsApp();
   }
 
   /* ===== NAVIGATION ===== */
@@ -402,6 +407,80 @@ export class ContentLoader {
         </div>
       </div>
     `;
+  }
+
+  /* ===== CLIENT LOGOS ===== */
+  renderClients() {
+    const container = document.querySelector('[data-section="clients"]');
+    if (!container) return;
+    const { clients } = this.data;
+
+    const items = clients.clients.map(c => `
+      <div class="client-item">
+        <span class="client-name">${c.name}</span>
+      </div>
+    `).join('');
+
+    // Duplicate for infinite scroll
+    container.innerHTML = `
+      <div class="clients-header">
+        <p>${clients.heading}</p>
+      </div>
+      <div style="overflow: hidden">
+        <div class="clients-track">${items}${items}</div>
+      </div>
+    `;
+  }
+
+  /* ===== PORTFOLIO / CASE STUDIES ===== */
+  renderPortfolio() {
+    const container = document.querySelector('[data-section="portfolio"]');
+    if (!container) return;
+    const { portfolio } = this.data;
+
+    container.innerHTML = `
+      <div class="section-header">
+        <span class="section-tag">${portfolio.header.tag}</span>
+        <h2>${portfolio.header.title}</h2>
+        <p>${portfolio.header.description}</p>
+      </div>
+      <div class="portfolio-grid">
+        ${portfolio.projects.map(p => `
+          <div class="portfolio-card">
+            <div class="portfolio-image">
+              <img src="${p.image}" alt="${p.title}" loading="lazy" />
+              <div class="portfolio-overlay"></div>
+              <span class="portfolio-category">${p.category}</span>
+            </div>
+            <div class="portfolio-body">
+              <h3>${p.title}</h3>
+              <p>${p.description}</p>
+              <div class="portfolio-metrics">
+                ${p.metrics.map(m => `
+                  <div class="metric">
+                    <span class="metric-value">${m.value}</span>
+                    <span class="metric-label">${m.label}</span>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  }
+
+  /* ===== WHATSAPP BUTTON ===== */
+  renderWhatsApp() {
+    const container = document.querySelector('.whatsapp-float');
+    if (!container) return;
+    const { site } = this.data;
+    const wa = site.whatsapp;
+    const url = `https://wa.me/${wa.number.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(wa.message)}`;
+    container.href = url;
+    container.setAttribute('aria-label', wa.tooltip);
+    const tooltip = container.querySelector('.whatsapp-tooltip');
+    if (tooltip) tooltip.textContent = wa.tooltip;
   }
 
   /* ===== FOOTER ===== */
