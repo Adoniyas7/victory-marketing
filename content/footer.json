@@ -16,6 +16,7 @@
         { "label": "Home", "href": "#home" },
         { "label": "About Us", "href": "#about" },
         { "label": "Services", "href": "#services" },
+        { "label": "Our Work", "href": "#portfolio" },
         { "label": "Our Team", "href": "#team" },
         { "label": "Contact", "href": "#contact" }
       ]

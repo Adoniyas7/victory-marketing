@@ -6,7 +6,13 @@
     "tagline": "Scale Sales & Grow Online"
   },
   "pageTitle": "Victory Marketing Agency | Scale Sales & Grow Online",
+  "description": "Victory Marketing is Ethiopia's fastest growing marketing agency. We help businesses scale sales and grow online through strategic content creation, social media management, paid advertising, and digital marketing solutions.",
   "copyright": "2026 Victory Marketing Agency. All rights reserved.",
+  "whatsapp": {
+    "number": "+251900000000",
+    "message": "Hello! I'm interested in your marketing services. Can we discuss my project?",
+    "tooltip": "Chat with us on WhatsApp"
+  },
   "social": {
     "facebook": "#",
     "instagram": "#",

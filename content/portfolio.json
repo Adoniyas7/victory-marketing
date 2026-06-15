@@ -1,0 +1,75 @@
+{
+  "header": {
+    "tag": "Our Work",
+    "title": "Case Studies & Results",
+    "description": "Real campaigns, real results. See how we've helped Ethiopian businesses grow their brand and scale their sales."
+  },
+  "projects": [
+    {
+      "image": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=80",
+      "category": "Social Media",
+      "title": "Habesha Foods Brand Launch",
+      "description": "Complete social media strategy and content creation for a new product line launch across all major platforms.",
+      "metrics": [
+        { "value": "300%", "label": "Engagement" },
+        { "value": "50K+", "label": "Reach" },
+        { "value": "2 Months", "label": "Timeline" }
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80",
+      "category": "Paid Ads",
+      "title": "TechAddis Lead Generation",
+      "description": "Targeted Facebook and Google ad campaigns designed to drive qualified leads for a B2B tech company.",
+      "metrics": [
+        { "value": "2x", "label": "Leads" },
+        { "value": "40%", "label": "Lower CPA" },
+        { "value": "5x", "label": "ROAS" }
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&q=80",
+      "category": "Branding",
+      "title": "Addis Fashion Rebrand",
+      "description": "Full brand identity redesign including logo, visual language, and marketing materials for a fashion startup.",
+      "metrics": [
+        { "value": "100%", "label": "New Identity" },
+        { "value": "150%", "label": "Brand Recall" },
+        { "value": "3 Weeks", "label": "Delivery" }
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80",
+      "category": "Web Development",
+      "title": "Abyssinia Cafe Website",
+      "description": "Modern responsive website with online menu, reservation system, and integrated social media feeds.",
+      "metrics": [
+        { "value": "200%", "label": "More Traffic" },
+        { "value": "4.9s", "label": "Load Time" },
+        { "value": "85%", "label": "Mobile Users" }
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1533750516457-a7f992034fec?w=600&q=80",
+      "category": "Content Creation",
+      "title": "Sheba Leather Content Series",
+      "description": "Professional video production and photography for a premium leather goods brand's digital campaigns.",
+      "metrics": [
+        { "value": "25+", "label": "Videos" },
+        { "value": "100K", "label": "Views" },
+        { "value": "180%", "label": "Growth" }
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=600&q=80",
+      "category": "SEO",
+      "title": "EthioTech SEO Overhaul",
+      "description": "Comprehensive technical SEO audit and optimization that dramatically improved organic search visibility.",
+      "metrics": [
+        { "value": "#1", "label": "Ranking" },
+        { "value": "400%", "label": "Organic Traffic" },
+        { "value": "6 Months", "label": "Timeline" }
+      ]
+    }
+  ]
+}
