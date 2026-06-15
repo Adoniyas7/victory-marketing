@@ -5,6 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Victory Marketing Agency | Scale Sales & Grow Online</title>
 
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Victory Marketing is Ethiopia's fastest growing marketing agency. We help businesses scale sales and grow online through strategic content creation, social media management, paid advertising, and digital marketing solutions." />
+    <meta name="keywords" content="marketing agency Ethiopia, digital marketing Addis Ababa, social media management, content creation, paid advertising, SEO, web development, branding" />
+    <meta name="author" content="Victory Marketing Agency" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Victory Marketing Agency | Scale Sales & Grow Online" />
+    <meta property="og:description" content="Ethiopia's fastest growing marketing agency. We help businesses attract customers, strengthen their online presence, and achieve measurable growth." />
+    <meta property="og:image" content="assets/images/logo.png" />
+    <meta property="og:site_name" content="Victory Marketing" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Victory Marketing Agency | Scale Sales & Grow Online" />
+    <meta name="twitter:description" content="Ethiopia's fastest growing marketing agency. Strategic content creation, social media management, and digital marketing solutions." />
+    <meta name="twitter:image" content="assets/images/logo.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,6 +52,9 @@
     <link rel="stylesheet" href="css/testimonials.css" />
     <link rel="stylesheet" href="css/contact.css" />
     <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/clients.css" />
+    <link rel="stylesheet" href="css/portfolio.css" />
+    <link rel="stylesheet" href="css/whatsapp.css" />
     <link rel="stylesheet" href="css/responsive.css" />
   </head>
   <body>
@@ -52,6 +77,7 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Our Work</a></li>
         <li><a href="#team">Team</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="#contact" class="nav-cta">Get Started</a></li>
@@ -64,6 +90,9 @@
     <!-- Hero Section -->
     <section class="hero" id="home" data-section="hero"></section>
 
+    <!-- Client Logos -->
+    <section class="clients" data-section="clients"></section>
+
     <!-- About Section -->
     <section class="about" id="about" data-section="about"></section>
 
@@ -72,6 +101,9 @@
 
     <!-- Services Section -->
     <section class="services" id="services" data-section="services"></section>
+
+    <!-- Portfolio / Case Studies -->
+    <section class="portfolio" id="portfolio" data-section="portfolio"></section>
 
     <!-- Why Choose Us -->
     <section class="why-us" id="why-us" data-section="why-us"></section>
@@ -95,9 +127,17 @@
     <footer data-section="footer"></footer>
 
     <!-- Scroll to Top -->
-    <button class="scroll-top" id="scrollTop">
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
       <i class="fas fa-arrow-up"></i>
     </button>
+
+    <!-- WhatsApp Floating Button -->
+    <a class="whatsapp-float" href="#" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+      <span class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i>
+      </span>
+      <span class="whatsapp-tooltip">Chat with us</span>
+    </a>
 
     <!-- Main JavaScript Module -->
     <script type="module" src="js/main.js"></script>
