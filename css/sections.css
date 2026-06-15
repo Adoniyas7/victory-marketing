@@ -1,0 +1,437 @@
+/* ===== ABOUT ===== */
+.about {
+  background: linear-gradient(180deg, var(--bg) 0%, var(--primary) 100%);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-visual {
+  position: relative;
+}
+
+.about-image {
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.about-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(74, 222, 128, 0.2), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-card {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  max-width: 280px;
+  z-index: 2;
+}
+
+.about-card h4 {
+  color: var(--accent);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.about-text h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-text p {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.about-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.about-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.about-feature i {
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.about-feature span {
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+/* ===== MVO (Mission, Vision, Objective) ===== */
+.mission-section {
+  background: var(--primary);
+}
+
+.mvo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mvo-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 2.5rem;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.mvo-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.mvo-card:hover::before {
+  transform: scaleX(1);
+}
+
+.mvo-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(74, 222, 128, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.mvo-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(74, 222, 128, 0.1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--accent);
+  border: 1px solid var(--border);
+}
+
+.mvo-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.mvo-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* ===== SERVICES ===== */
+.services {
+  background: var(--bg);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(74, 222, 128, 0.1),
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.service-card:hover::after {
+  opacity: 1;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(74, 222, 128, 0.3);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.service-icon {
+  width: 55px;
+  height: 55px;
+  background: linear-gradient(135deg, rgba(74, 222, 128, 0.15), rgba(74, 222, 128, 0.05));
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  font-size: 1.4rem;
+  color: var(--accent);
+  border: 1px solid var(--border);
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.service-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+.service-list {
+  list-style: none;
+}
+
+.service-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.service-list li i {
+  color: var(--accent);
+  font-size: 0.7rem;
+}
+
+/* ===== WHY US ===== */
+.why-us {
+  background: linear-gradient(180deg, var(--primary) 0%, var(--bg) 100%);
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.why-card {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  transition: all 0.4s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(74, 222, 128, 0.3);
+}
+
+.why-icon {
+  width: 70px;
+  height: 70px;
+  background: rgba(74, 222, 128, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.8rem;
+  color: var(--accent);
+  border: 2px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.why-card:hover .why-icon {
+  background: rgba(74, 222, 128, 0.2);
+  box-shadow: 0 0 30px rgba(74, 222, 128, 0.2);
+}
+
+.why-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.why-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ===== PROCESS ===== */
+.process {
+  background: var(--bg);
+}
+
+.process-timeline {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.process-timeline::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--primary-light), var(--accent));
+  z-index: 0;
+}
+
+.process-step {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  max-width: 220px;
+}
+
+.step-number {
+  width: 80px;
+  height: 80px;
+  background: var(--card-bg);
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-family: "Outfit", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent);
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.process-step:hover .step-number {
+  background: rgba(74, 222, 128, 0.1);
+  border-color: var(--accent);
+  box-shadow: 0 0 30px rgba(74, 222, 128, 0.2);
+  transform: scale(1.1);
+}
+
+.step-number::after {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 2px dashed rgba(74, 222, 128, 0.2);
+  animation: spin 20s linear infinite;
+}
+
+.process-step h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.process-step p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ===== CTA BANNER ===== */
+.cta-banner {
+  background: linear-gradient(135deg, rgba(74, 222, 128, 0.1), rgba(74, 222, 128, 0.02));
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 4rem;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-banner::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(74, 222, 128, 0.05), transparent 60%);
+  animation: rotate 20s linear infinite;
+}
+
+.cta-banner h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-banner p {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+  font-size: 1.1rem;
+}
+
+.cta-banner .btn {
+  position: relative;
+  z-index: 1;
+}

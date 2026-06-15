@@ -1,0 +1,65 @@
+/* ===== TESTIMONIALS ===== */
+.testimonials {
+  background: var(--primary);
+  overflow: hidden;
+}
+
+.testimonials-slider {
+  display: flex;
+  gap: 2rem;
+  animation: scroll 30s linear infinite;
+  width: max-content;
+  padding: 1rem 0;
+}
+
+.testimonial-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2rem;
+  min-width: 380px;
+  max-width: 380px;
+}
+
+.testimonial-stars {
+  color: #fbbf24;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.testimonial-text {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.testimonial-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--primary);
+  font-family: "Outfit", sans-serif;
+}
+
+.testimonial-author-info h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.1rem;
+}
+
+.testimonial-author-info span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}

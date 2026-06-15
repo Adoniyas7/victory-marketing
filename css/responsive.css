@@ -1,0 +1,103 @@
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 1024px) {
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-visual {
+    order: -1;
+  }
+
+  .mvo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-timeline {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .process-timeline::before {
+    display: none;
+  }
+
+  .process-step {
+    max-width: 100%;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(15, 15, 26, 0.98);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+    backdrop-filter: blur(20px);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .services-grid,
+  .why-grid,
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-stats {
+    gap: 2rem;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-banner {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .cta-banner h2 {
+    font-size: 1.8rem;
+  }
+
+  .testimonial-card {
+    min-width: 300px;
+    max-width: 300px;
+  }
+}

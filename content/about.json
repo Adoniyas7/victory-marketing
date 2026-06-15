@@ -1,0 +1,29 @@
+{
+  "header": {
+    "tag": "About Us",
+    "title": "Your Partner in Digital Success",
+    "description": "We combine creativity with data-driven strategies to deliver exceptional results for businesses across Ethiopia."
+  },
+  "image": {
+    "src": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
+    "alt": "Team collaboration"
+  },
+  "card": {
+    "icon": "fas fa-chart-line",
+    "title": "Proven Results",
+    "text": "Our data-driven approach has helped dozens of Ethiopian businesses achieve 3x growth in online engagement."
+  },
+  "heading": "Creative & Results-Driven Marketing Agency",
+  "paragraphs": [
+    "Victory Marketing is a creative and results-driven marketing agency dedicated to helping businesses thrive in the digital world. We combine innovative ideas, compelling content, and data-driven strategies to help brands connect with their audience, increase engagement, and drive sustainable growth.",
+    "Based in Addis Ababa, Ethiopia, we understand the local market dynamics while applying global best practices to deliver marketing solutions that truly work."
+  ],
+  "features": [
+    "Data-Driven Strategies",
+    "Creative Excellence",
+    "Local Market Expertise",
+    "Transparent Reporting",
+    "Affordable Packages",
+    "24/7 Support"
+  ]
+}

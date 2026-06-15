@@ -1,0 +1,29 @@
+{
+  "header": {
+    "tag": "Why Us",
+    "title": "Why Choose Victory Marketing?",
+    "description": "We don't just deliver services — we deliver results that transform your business."
+  },
+  "reasons": [
+    {
+      "icon": "fas fa-chart-line",
+      "title": "Results-Oriented Approach",
+      "text": "Every campaign is designed with clear business objectives and measurable outcomes. We track what matters."
+    },
+    {
+      "icon": "fas fa-lightbulb",
+      "title": "Creative Excellence",
+      "text": "Our team creates engaging content that resonates with your audience and strengthens your brand identity."
+    },
+    {
+      "icon": "fas fa-chess",
+      "title": "Strategic Thinking",
+      "text": "We combine creativity with data to deliver effective marketing solutions that drive real business growth."
+    },
+    {
+      "icon": "fas fa-headset",
+      "title": "Dedicated Support",
+      "text": "We work closely with our clients, ensuring personalized service and long-term success every step of the way."
+    }
+  ]
+}

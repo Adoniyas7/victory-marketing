@@ -1,0 +1,37 @@
+{
+  "header": {
+    "tag": "Testimonials",
+    "title": "What Our Clients Say",
+    "description": "Real feedback from businesses we've helped grow and succeed in the digital space."
+  },
+  "testimonials": [
+    {
+      "stars": 5,
+      "text": "Victory Marketing transformed our online presence completely. Our social media engagement increased by 300% within just two months. Highly recommended!",
+      "author": "Abebe Bekele",
+      "title": "CEO, Habesha Foods",
+      "initials": "AB"
+    },
+    {
+      "stars": 5,
+      "text": "The team at Victory Marketing understood our brand from day one. Their creative content and strategic approach helped us reach new customers we never thought possible.",
+      "author": "Sara Mohammed",
+      "title": "Founder, Addis Fashion",
+      "initials": "SM"
+    },
+    {
+      "stars": 5,
+      "text": "Professional, creative, and results-driven. Victory Marketing built our website and manages our ads — our leads have doubled since we started working with them.",
+      "author": "Yonas Tadesse",
+      "title": "Director, TechAddis Solutions",
+      "initials": "YT"
+    },
+    {
+      "stars": 5,
+      "text": "Working with Victory Marketing has been a game-changer for our restaurant. Their social media management brought in so many new customers. Truly exceptional service!",
+      "author": "Meron Alemayehu",
+      "title": "Owner, Abyssinia Cafe",
+      "initials": "MA"
+    }
+  ]
+}

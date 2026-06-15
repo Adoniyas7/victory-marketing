@@ -1,0 +1,20 @@
+# 知识卡导出索引文件
+schema_version: 1
+locale: en-US
+branch: Q0DeR-MaG1C-BrAnCh-Fo2-NoN-GiT-Or-No-C0MmIt
+exported_at: "2026-06-15T17:22:01Z"
+modules:
+    "":
+        dir_name: Victory Marketing Agency Website
+        title: Victory Marketing Agency Website
+        scope:
+            - index.html
+            - victory_marketing.html
+            - content/
+            - css/
+            - js/
+            - logo.png
+        source_files: []
+        children: []
+        depends_on: []
+        related_to: []

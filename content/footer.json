@@ -1,0 +1,44 @@
+{
+  "cta": {
+    "heading": "Ready to Grow Your Brand?",
+    "description": "Let's build something great together. Get in touch today and take the first step towards scaling your business online.",
+    "button": {
+      "icon": "fas fa-paper-plane",
+      "label": "Start Your Project",
+      "link": "#contact"
+    }
+  },
+  "brandDescription": "Helping Brands Scale Sales & Grow Online. Victory Marketing is your trusted partner for digital growth in Ethiopia.",
+  "columns": [
+    {
+      "title": "Quick Links",
+      "links": [
+        { "label": "Home", "href": "#home" },
+        { "label": "About Us", "href": "#about" },
+        { "label": "Services", "href": "#services" },
+        { "label": "Our Team", "href": "#team" },
+        { "label": "Contact", "href": "#contact" }
+      ]
+    },
+    {
+      "title": "Services",
+      "links": [
+        { "label": "Content Creation", "href": "#services" },
+        { "label": "Social Media", "href": "#services" },
+        { "label": "Paid Advertising", "href": "#services" },
+        { "label": "Web Development", "href": "#services" },
+        { "label": "SEO & Analytics", "href": "#services" }
+      ]
+    },
+    {
+      "title": "Connect",
+      "links": [
+        { "label": "Facebook", "href": "#" },
+        { "label": "Instagram", "href": "#" },
+        { "label": "LinkedIn", "href": "#" },
+        { "label": "TikTok", "href": "#" },
+        { "label": "Twitter/X", "href": "#" }
+      ]
+    }
+  ]
+}

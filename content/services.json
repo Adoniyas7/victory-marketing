@@ -1,0 +1,81 @@
+{
+  "header": {
+    "tag": "What We Do",
+    "title": "Our Services",
+    "description": "Comprehensive digital marketing solutions tailored to help your brand stand out and succeed in the competitive online landscape."
+  },
+  "services": [
+    {
+      "icon": "fas fa-pen-nib",
+      "title": "Content Creation",
+      "description": "We create high-quality content that captures attention and communicates your brand message effectively across all platforms.",
+      "items": [
+        "Social Media Content",
+        "Video Production",
+        "Graphic Design",
+        "Photography",
+        "Brand Storytelling"
+      ]
+    },
+    {
+      "icon": "fas fa-share-nodes",
+      "title": "Social Media Management",
+      "description": "Build and maintain a strong online presence through strategic social media management that drives engagement.",
+      "items": [
+        "Content Planning",
+        "Content Scheduling",
+        "Community Management",
+        "Audience Growth",
+        "Performance Reporting"
+      ]
+    },
+    {
+      "icon": "fas fa-bullhorn",
+      "title": "Paid Advertising",
+      "description": "Reach the right audience and maximize your return on investment with targeted paid advertising campaigns.",
+      "items": [
+        "Facebook Advertising",
+        "Instagram Advertising",
+        "TikTok Advertising",
+        "Google Advertising",
+        "Campaign Optimization"
+      ]
+    },
+    {
+      "icon": "fas fa-palette",
+      "title": "Branding & Design",
+      "description": "Build a memorable and professional brand identity that resonates with your target audience and sets you apart.",
+      "items": [
+        "Logo Design",
+        "Brand Identity Development",
+        "Marketing Materials",
+        "Visual Branding",
+        "Brand Guidelines"
+      ]
+    },
+    {
+      "icon": "fas fa-code",
+      "title": "Website Development",
+      "description": "Modern websites designed to attract visitors and convert them into loyal customers with seamless user experience.",
+      "items": [
+        "Business Websites",
+        "Landing Pages",
+        "SEO Optimization",
+        "Website Maintenance",
+        "E-commerce Solutions"
+      ]
+    },
+    {
+      "icon": "fas fa-magnifying-glass-chart",
+      "title": "SEO & Analytics",
+      "description": "Improve your search rankings and make data-backed decisions with our comprehensive SEO and analytics services.",
+      "items": [
+        "Keyword Research",
+        "On-Page SEO",
+        "Technical SEO Audit",
+        "Performance Analytics",
+        "Monthly Reports"
+      ]
+    }
+  ]
+}

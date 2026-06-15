@@ -1,0 +1,29 @@
+{
+  "header": {
+    "tag": "How We Work",
+    "title": "Our Process",
+    "description": "A proven four-step methodology designed to deliver consistent, measurable results for every client."
+  },
+  "steps": [
+    {
+      "number": "01",
+      "title": "Discovery",
+      "text": "We take time to understand your business, goals, and target audience to build a solid foundation."
+    },
+    {
+      "number": "02",
+      "title": "Strategy",
+      "text": "We develop a customized marketing plan tailored specifically to your unique needs and objectives."
+    },
+    {
+      "number": "03",
+      "title": "Execution",
+      "text": "We implement campaigns and create content that drives engagement, growth, and conversions."
+    },
+    {
+      "number": "04",
+      "title": "Optimization",
+      "text": "We continuously monitor, analyze, and improve performance to maximize your ROI over time."
+    }
+  ]
+}

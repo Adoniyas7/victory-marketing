@@ -1,0 +1,1 @@
+A static, content-driven marketing agency website that dynamically renders sections from JSON data files using vanilla JavaScript and CSS.

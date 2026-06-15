@@ -1,0 +1,13 @@
+schema_version: 1
+module_path: ""
+title: Victory Marketing Agency Website
+scope:
+    - index.html
+    - victory_marketing.html
+    - content/
+    - css/
+    - js/
+    - logo.png
+source_files: []
+depends_on: []
+related_to: []

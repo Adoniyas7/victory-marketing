@@ -1,0 +1,58 @@
+{
+  "header": {
+    "tag": "Our Team",
+    "title": "Meet The Experts",
+    "description": "A passionate team of creatives, strategists, and marketers dedicated to your success."
+  },
+  "members": [
+    {
+      "initials": "KE",
+      "name": "Kalkidan Ermias",
+      "role": "CEO & Co-Founder",
+      "bio": "Provides strategic leadership, oversees business development, and ensures the company delivers exceptional value to clients.",
+      "social": { "linkedin": "#", "twitter": "#", "instagram": "#" }
+    },
+    {
+      "initials": "SB",
+      "name": "Senay Birhane",
+      "role": "Managing Director & Co-Founder",
+      "bio": "Leads operations, manages projects, and drives the execution of the company's vision and growth strategy.",
+      "social": { "linkedin": "#", "twitter": "#", "instagram": "#" }
+    },
+    {
+      "initials": "RG",
+      "name": "Rediet Gezahegn",
+      "role": "Social Media Manager",
+      "bio": "Develops engaging content that connects brands with their target audience across all social platforms.",
+      "social": { "linkedin": "#", "twitter": "#", "instagram": "#" }
+    },
+    {
+      "initials": "YD",
+      "name": "Yohannes Degu",
+      "role": "Creative Director & Scriptwriter",
+      "bio": "Creates compelling campaign concepts, storytelling strategies, and content scripts that captivate audiences.",
+      "social": { "linkedin": "#", "twitter": "#", "instagram": "#" }
+    },
+    {
+      "initials": "NE",
+      "name": "Nebyu Ermias",
+      "role": "Videographer & Video Editor",
+      "bio": "Produces high-quality visual content that enhances brand presence and drives engagement across platforms.",
+      "social": { "linkedin": "#", "twitter": "#", "instagram": "#" }
+    },
+    {
+      "initials": "AL",
+      "name": "Amanuel Lemma",
+      "role": "Graphic Designer",
+      "bio": "Designs impactful visuals that strengthen brand identity and communicate messages effectively.",
+      "social": { "linkedin": "#", "twitter": "#", "instagram": "#" }
+    },
+    {
+      "initials": "AB",
+      "name": "Amanuel Behailu",
+      "role": "Web Developer & SEO Specialist",
+      "bio": "Builds user-friendly websites and implements SEO strategies that improve online visibility and performance.",
+      "social": { "linkedin": "#", "twitter": "#", "instagram": "#" }
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+Vanilla JavaScript (ES Modules), CSS3 (Custom Properties, Flexbox/Grid), HTML5. No build tools or frameworks detected; relies on native browser `fetch` API for content loading.

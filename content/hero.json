@@ -1,0 +1,33 @@
+{
+  "badge": {
+    "icon": "fas fa-rocket",
+    "text": "Ethiopia's Fastest Growing Marketing Agency"
+  },
+  "headline": {
+    "before": "Helping Brands ",
+    "highlight1": "Scale Sales",
+    "middle": " & ",
+    "highlight2": "Grow Online"
+  },
+  "description": "We help businesses attract customers, strengthen their online presence, and achieve measurable growth through strategic content creation, social media management, paid advertising, and digital marketing solutions.",
+  "buttons": [
+    {
+      "label": "Get Started Today",
+      "icon": "fas fa-paper-plane",
+      "link": "#contact",
+      "style": "btn-primary"
+    },
+    {
+      "label": "Learn More",
+      "icon": "fas fa-play-circle",
+      "link": "#about",
+      "style": "btn-outline"
+    }
+  ],
+  "stats": [
+    { "target": 100, "label": "Businesses Served", "suffix": "+" },
+    { "target": 3, "label": "Years of Excellence", "suffix": "+" },
+    { "target": 7, "label": "Expert Team Members", "suffix": "+" },
+    { "target": 95, "label": "% Client Satisfaction", "suffix": "" }
+  ]
+}

@@ -1,0 +1,3 @@
+- Section containers in HTML use `data-section` attributes to map directly to JSON filenames and renderer methods in `ContentLoader`.
+- JavaScript modules export named functions or classes rather than default exports, promoting explicit imports in `main.js`.
+- CSS variables are defined in a dedicated `variables.css` file and used consistently across other stylesheets for theming.
