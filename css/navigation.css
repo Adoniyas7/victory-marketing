@@ -95,15 +95,16 @@ nav.scrolled {
   border-radius: 50px;
   font-weight: 600 !important;
   transition: background 0.3s ease, transform 0.3s ease;
+  transform: translate(calc(var(--mx, 0) * 1px), calc(var(--my, 0) * 1px));
 }
 
 .nav-cta:hover {
   background: var(--accent-dark);
-  transform: translateY(-2px);
+  transform: translate(calc(var(--mx, 0) * 1px), calc(var(--my, 0) * 1px - 2px));
 }
 
 .nav-cta:active {
-  transform: translateY(0) scale(0.98);
+  transform: translate(calc(var(--mx, 0) * 1px), calc(var(--my, 0) * 1px)) scale(0.98);
 }
 
 .nav-cta::after {
@@ -121,6 +122,7 @@ nav.scrolled {
   min-height: 44px;
   align-items: center;
   justify-content: center;
+  transform: translate(calc(var(--mx, 0) * 1px), calc(var(--my, 0) * 1px));
 }
 
 .theme-toggle {
@@ -136,16 +138,17 @@ nav.scrolled {
   align-items: center;
   justify-content: center;
   transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  transform: translate(calc(var(--mx, 0) * 1px), calc(var(--my, 0) * 1px));
 }
 
 .theme-toggle:hover {
   background: var(--accent-soft);
   color: var(--accent);
-  transform: rotate(15deg);
+  transform: translate(calc(var(--mx, 0) * 1px), calc(var(--my, 0) * 1px)) rotate(15deg);
 }
 
 .theme-toggle:active {
-  transform: scale(0.95) rotate(0deg);
+  transform: translate(calc(var(--mx, 0) * 1px), calc(var(--my, 0) * 1px)) scale(0.95) rotate(0deg);
 }
 
 .theme-toggle:focus-visible {
