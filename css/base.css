@@ -109,6 +109,10 @@ section {
   transform: translateY(-3px);
 }
 
+.btn-primary:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
 .btn-outline {
   background: transparent;
   color: var(--text);
@@ -120,6 +124,10 @@ section {
   color: var(--accent);
   transform: translateY(-3px);
   background: rgba(245, 158, 11, 0.05);
+}
+
+.btn-outline:active {
+  transform: translateY(-1px) scale(0.98);
 }
 
 /* ===== SCROLL TO TOP ===== */
@@ -153,6 +161,10 @@ section {
   transform: translateY(-5px);
 }
 
+.scroll-top:active {
+  transform: translateY(-2px) scale(0.95);
+}
+
 /* ===== SCROLL REVEAL ===== */
 .reveal {
   opacity: 1;
@@ -178,6 +190,7 @@ section {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
     scroll-behavior: auto !important;
   }
 

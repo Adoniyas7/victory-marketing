@@ -31,6 +31,10 @@
   box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
 }
 
+.whatsapp-btn:active {
+  transform: scale(0.98) translateY(-1px);
+}
+
 .whatsapp-tooltip {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -46,7 +50,8 @@
   pointer-events: none;
 }
 
-.whatsapp-float:hover .whatsapp-tooltip {
+.whatsapp-float:hover .whatsapp-tooltip,
+.whatsapp-float:focus-within .whatsapp-tooltip {
   opacity: 1;
   transform: translateX(0);
 }

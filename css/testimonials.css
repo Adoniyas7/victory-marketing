@@ -12,7 +12,8 @@
   padding: 1rem 0;
 }
 
-.testimonials-slider:hover {
+.testimonials-slider:hover,
+.testimonials-slider:focus-within {
   animation-play-state: paused;
 }
 

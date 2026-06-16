@@ -54,6 +54,10 @@
   background: rgba(245, 158, 11, 0.05);
 }
 
+.contact-card:active {
+  transform: translateY(-2px) scale(0.98);
+}
+
 .contact-card .contact-icon {
   width: 56px;
   height: 56px;
