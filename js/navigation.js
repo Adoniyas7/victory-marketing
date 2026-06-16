@@ -79,4 +79,34 @@ export function initNavigation() {
       }
     });
   });
+
+  // Scroll spy: highlight the nav link whose section is currently in view
+  if (navLinks) {
+    const navLinksArray = Array.from(navLinks.querySelectorAll('a[href^="#"]'));
+    const spySections = document.querySelectorAll('section[id]');
+
+    if (spySections.length && navLinksArray.length) {
+      const spyObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const id = entry.target.id;
+              navLinksArray.forEach((link) => {
+                link.classList.remove('active');
+                if (
+                  link.getAttribute('href') === `#${id}` &&
+                  !link.classList.contains('nav-cta')
+                ) {
+                  link.classList.add('active');
+                }
+              });
+            }
+          });
+        },
+        { rootMargin: '-40% 0px -40% 0px', threshold: 0 }
+      );
+
+      spySections.forEach((section) => spyObserver.observe(section));
+    }
+  }
 }
