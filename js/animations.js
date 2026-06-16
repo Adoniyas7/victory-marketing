@@ -47,6 +47,8 @@ export function initScrollReveal() {
   const elements = document.querySelectorAll(selectors);
   if (!elements.length) return;
 
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -60,6 +62,15 @@ export function initScrollReveal() {
 
   elements.forEach((el) => {
     el.classList.add('reveal');
+
+    if (!prefersReducedMotion) {
+      const siblings = Array.from(el.parentElement?.children || []).filter((child) =>
+        child.classList.contains('reveal')
+      );
+      const index = siblings.indexOf(el);
+      el.style.transitionDelay = `${index * 60}ms`;
+    }
+
     observer.observe(el);
   });
 }
