@@ -21,40 +21,18 @@
   font-size: 1.6rem;
   text-decoration: none;
   box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
   position: relative;
 }
 
 .whatsapp-btn:hover {
   background: #1da851;
-  transform: scale(1.1) translateY(-3px);
+  transform: scale(1.05) translateY(-3px);
   box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
 }
 
-/* Pulse ring animation */
-.whatsapp-btn::before {
-  content: "";
-  position: absolute;
-  inset: -4px;
-  border-radius: 50%;
-  border: 2px solid rgba(37, 211, 102, 0.4);
-  animation: waPulse 2s ease-out infinite;
-}
-
-@keyframes waPulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1.4);
-    opacity: 0;
-  }
-}
-
 .whatsapp-tooltip {
-  background: var(--card-bg);
-  backdrop-filter: blur(10px);
+  background: var(--surface);
   border: 1px solid var(--border);
   color: var(--text);
   padding: 0.5rem 1rem;
@@ -64,7 +42,7 @@
   white-space: nowrap;
   opacity: 0;
   transform: translateX(-10px);
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
   pointer-events: none;
 }
 
