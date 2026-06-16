@@ -5,7 +5,7 @@
 
 import { ContentLoader } from './content-loader.js';
 import { initNavigation } from './navigation.js';
-import { initStatCounters, initScrollReveal, initServiceCardGlow } from './animations.js';
+import { initStatCounters, initScrollReveal, initServiceCardGlow, initHeroParticles } from './animations.js';
 import { initTheme } from './theme.js';
 import { initMagneticButtons } from './interactions.js';
 
@@ -27,6 +27,7 @@ async function init() {
     initStatCounters();
     initScrollReveal();
     initServiceCardGlow();
+    initHeroParticles();
     initMagneticButtons();
   } catch (error) {
     console.error('Failed to initialize website:', error);
