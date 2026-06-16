@@ -16,6 +16,17 @@ export function initNavigation() {
     });
   }
 
+  // Scroll progress indicator
+  const scrollProgress = document.getElementById('scrollProgress');
+  if (scrollProgress) {
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      scrollProgress.style.width = `${progress}%`;
+    });
+  }
+
   // Mobile menu toggle
   if (mobileMenuBtn && navLinks) {
     const toggleMenu = () => {

@@ -7,6 +7,7 @@ import { ContentLoader } from './content-loader.js';
 import { initNavigation } from './navigation.js';
 import { initStatCounters, initScrollReveal, initServiceCardGlow } from './animations.js';
 import { initTheme } from './theme.js';
+import { initMagneticButtons } from './interactions.js';
 
 async function init() {
   // Initialize theme toggle before content loads so the control matches the current mode
@@ -26,6 +27,7 @@ async function init() {
     initStatCounters();
     initScrollReveal();
     initServiceCardGlow();
+    initMagneticButtons();
   } catch (error) {
     console.error('Failed to initialize website:', error);
   }
