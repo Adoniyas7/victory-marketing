@@ -76,13 +76,16 @@ export class ContentLoader {
     const hl = hero.headline;
 
     container.innerHTML = `
+      <canvas id="heroParticles" class="hero-particles"></canvas>
       <div class="hero-bg"></div>
       <div class="hero-grid"></div>
       <div class="hero-content">
+${"" /* 
         <div class="hero-badge">
           <i class="${hero.badge.icon}"></i>
           ${hero.badge.text}
         </div>
+*/}
         <h1>
           ${hl.before}<span class="highlight">${hl.highlight1}</span>${hl.middle}<span class="highlight">${hl.highlight2}</span>
         </h1>
