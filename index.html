@@ -58,7 +58,14 @@
     <link rel="stylesheet" href="css/responsive.css" />
 
     <script>
-      document.documentElement.classList.add('js');
+      (function () {
+        const stored = localStorage.getItem('theme');
+        const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+        if (stored === 'light' || (!stored && prefersLight)) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+        document.documentElement.classList.add('js');
+      })();
     </script>
   </head>
   <body>
@@ -88,6 +95,9 @@
         aria-controls="navLinks"
       >
         <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch to light mode">
+        <i class="fas fa-moon" aria-hidden="true"></i>
       </button>
     </nav>
 
