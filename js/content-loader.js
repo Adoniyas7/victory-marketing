@@ -338,12 +338,19 @@ export class ContentLoader {
     if (!container) return;
     const { contact } = this.data;
 
-    // Build form fields
-    const halfFields = contact.form.fields.filter(f => f.half);
-    const fullFields = contact.form.fields.filter(f => !f.half);
-    const sel = contact.form.selectField;
-    const msg = contact.form.messageField;
-    const submit = contact.form.submitButton;
+    const renderCard = (item) => {
+      const attrs = item.href
+        ? `href="${item.href}" ${item.external ? 'target="_blank" rel="noopener noreferrer"' : ''}`
+        : '';
+      const tag = item.href ? 'a' : 'div';
+      return `
+        <${tag} class="contact-card" ${attrs}>
+          <div class="contact-icon"><i class="${item.icon}"></i></div>
+          <h4>${item.label}</h4>
+          <p>${item.value}</p>
+        </${tag}>
+      `;
+    };
 
     container.innerHTML = `
       <div class="section-header">
@@ -355,48 +362,9 @@ export class ContentLoader {
         <div class="contact-info">
           <h3>${contact.info.heading}</h3>
           <p>${contact.info.description}</p>
-          ${contact.info.items.map(item => `
-            <div class="contact-item">
-              <div class="contact-icon"><i class="${item.icon}"></i></div>
-              <div>
-                <h4>${item.label}</h4>
-                <p>${item.value}</p>
-              </div>
-            </div>
-          `).join('')}
         </div>
-        <div class="contact-form">
-          <form id="contactForm">
-            <div class="form-row">
-              ${halfFields.map(f => `
-                <div class="form-group">
-                  <label>${f.label}</label>
-                  <input type="${f.type}" placeholder="${f.placeholder}" ${f.required ? 'required' : ''} />
-                </div>
-              `).join('')}
-            </div>
-            ${fullFields.map(f => `
-              <div class="form-group">
-                <label>${f.label}</label>
-                <input type="${f.type}" placeholder="${f.placeholder}" ${f.required ? 'required' : ''} />
-              </div>
-            `).join('')}
-            <div class="form-group">
-              <label>${sel.label}</label>
-              <select>
-                <option>${sel.placeholder}</option>
-                ${sel.options.map(opt => `<option>${opt}</option>`).join('')}
-              </select>
-            </div>
-            <div class="form-group">
-              <label>${msg.label}</label>
-              <textarea placeholder="${msg.placeholder}"></textarea>
-            </div>
-            <button type="submit" class="submit-btn" data-success="${contact.form.successMessage}">
-              <i class="${submit.icon}"></i>
-              ${submit.label}
-            </button>
-          </form>
+        <div class="contact-cards">
+          ${contact.info.items.map(renderCard).join('')}
         </div>
       </div>
     `;
