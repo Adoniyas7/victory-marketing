@@ -24,7 +24,7 @@
 
 .team-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(245, 158, 11, 0.3);
+  border-color: var(--accent-strong);
 }
 
 .team-card:first-child {
@@ -34,7 +34,7 @@
 .team-avatar {
   width: 90px;
   height: 90px;
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(245, 158, 11, 0.05));
+  background: linear-gradient(135deg, var(--accent-medium), var(--accent-bg));
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -76,7 +76,7 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(245, 158, 11, 0.1);
+  background: var(--accent-bg);
   border: 1px solid var(--border);
   display: flex;
   align-items: center;
@@ -89,7 +89,7 @@
 
 .team-social a:hover {
   background: var(--accent);
-  color: var(--primary);
+  color: var(--on-accent);
   border-color: var(--accent);
   transform: translateY(-3px);
 }

@@ -22,7 +22,7 @@
 
 .portfolio-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(245, 158, 11, 0.3);
+  border-color: var(--accent-strong);
 }
 
 .portfolio-card:first-child {
@@ -50,7 +50,7 @@
 .portfolio-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 40%, rgba(12, 12, 13, 0.8) 100%);
+  background: linear-gradient(180deg, transparent 40%, var(--portfolio-overlay) 100%);
   pointer-events: none;
 }
 

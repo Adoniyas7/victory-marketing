@@ -78,7 +78,7 @@ footer {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: rgba(245, 158, 11, 0.1);
+  background: var(--accent-bg);
   border: 1px solid var(--border);
   display: flex;
   align-items: center;
@@ -90,7 +90,7 @@ footer {
 
 .footer-social a:hover {
   background: var(--accent);
-  color: var(--primary);
+  color: var(--on-accent);
   border-color: var(--accent);
   transform: translateY(-3px);
 }

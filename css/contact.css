@@ -51,7 +51,7 @@
 .contact-card:focus-visible {
   border-color: var(--accent);
   transform: translateY(-6px);
-  background: rgba(245, 158, 11, 0.05);
+  background: var(--accent-soft);
 }
 
 .contact-card:active {
@@ -62,7 +62,7 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: rgba(245, 158, 11, 0.1);
+  background: var(--accent-bg);
   border: 1px solid var(--border);
   display: flex;
   align-items: center;
@@ -75,7 +75,7 @@
 .contact-card:hover .contact-icon,
 .contact-card:focus-visible .contact-icon {
   background: var(--accent);
-  color: var(--primary);
+  color: var(--on-accent);
   border-color: var(--accent);
 }
 
