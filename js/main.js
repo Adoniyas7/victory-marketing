@@ -5,7 +5,7 @@
 
 import { ContentLoader } from './content-loader.js';
 import { initNavigation } from './navigation.js';
-import { initParticles, initStatCounters, initScrollReveal, initServiceCardGlow } from './animations.js';
+import { initStatCounters, initScrollReveal, initServiceCardGlow } from './animations.js';
 import { initContactForm } from './form.js';
 
 async function init() {
@@ -19,7 +19,6 @@ async function init() {
     loader.renderAll();
 
     // Initialize interactive features after content is rendered
-    initParticles();
     initNavigation();
     initStatCounters();
     initScrollReveal();
@@ -27,12 +26,6 @@ async function init() {
     initContactForm();
   } catch (error) {
     console.error('Failed to initialize website:', error);
-  } finally {
-    // Hide the loader
-    setTimeout(() => {
-      const loaderEl = document.getElementById('loader');
-      if (loaderEl) loaderEl.classList.add('hidden');
-    }, 500);
   }
 }
 
