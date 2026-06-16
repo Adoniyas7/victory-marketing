@@ -41,7 +41,7 @@
   --text-muted: #78716c;
   --card-bg: rgba(255, 255, 255, 0.85);
   --border: rgba(var(--accent-rgb), 0.2);
-  --on-accent: #0c0c0d;
+  --on-accent: #050826;
 
   --accent-soft: rgba(var(--accent-rgb), 0.12);
   --accent-bg: rgba(var(--accent-rgb), 0.15);
@@ -61,3 +61,4 @@
   --mobile-menu-bg: rgba(255, 255, 255, 0.98);
   --portfolio-overlay: rgba(12, 12, 13, 0.6);
 }
+
