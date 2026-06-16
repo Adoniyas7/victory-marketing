@@ -24,7 +24,8 @@
   width: max-content;
 }
 
-.clients-track:hover {
+.clients-track:hover,
+.clients-track:focus-within {
   animation-play-state: paused;
 }
 

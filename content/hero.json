@@ -19,7 +19,7 @@
     },
     {
       "label": "Learn More",
-      "icon": "fas fa-play-circle",
+      "icon": "fas fa-arrow-right",
       "link": "#about",
       "style": "btn-outline"
     }

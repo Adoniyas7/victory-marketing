@@ -12,38 +12,21 @@
 .hero-bg {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse at 20% 50%, rgba(74, 222, 128, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(74, 222, 128, 0.05) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 100%, rgba(74, 222, 128, 0.06) 0%, transparent 50%);
+  background: radial-gradient(ellipse at 20% 50%, var(--hero-glow-1) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, var(--hero-glow-2) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 100%, var(--hero-glow-3) 0%, transparent 50%);
 }
 
 .hero-grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(74, 222, 128, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(74, 222, 128, 0.03) 1px, transparent 1px);
+    linear-gradient(var(--hero-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--hero-grid-line) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
   -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
-}
-
-.floating-particles {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.particle {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: var(--accent);
-  border-radius: 50%;
-  opacity: 0.4;
-  animation: float 15s infinite ease-in-out;
+  opacity: 0.6;
 }
 
 .hero-content {
@@ -57,18 +40,17 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(74, 222, 128, 0.1);
+  background: var(--card-bg);
   border: 1px solid var(--border);
   padding: 0.5rem 1.2rem;
   border-radius: 50px;
   font-size: 0.9rem;
   color: var(--accent);
   margin-bottom: 2rem;
-  backdrop-filter: blur(10px);
 }
 
 .hero-badge i {
-  animation: pulse 2s infinite;
+  font-size: 0.85em;
 }
 
 .hero h1 {
@@ -79,10 +61,7 @@
 }
 
 .hero h1 .highlight {
-  background: linear-gradient(135deg, var(--accent), #86efac);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--accent);
 }
 
 .hero p {
@@ -106,6 +85,35 @@
   gap: 4rem;
   margin-top: 5rem;
   flex-wrap: wrap;
+}
+
+@keyframes heroEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.js .hero-content > * {
+  animation: heroEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.js .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+.js .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+.js .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+.js .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
+.js .hero-content > *:nth-child(5) { animation-delay: 0.5s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .hero-content > * {
+    animation: none;
+  }
 }
 
 .stat-item {

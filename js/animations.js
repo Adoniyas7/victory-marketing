@@ -1,23 +1,7 @@
 /**
- * Animations module - handles particle generation, stat counter animation,
- * scroll reveal for cards, and service card mouse glow effect.
+ * Animations module - handles stat counter animation, scroll reveal for cards,
+ * and service card mouse glow effect.
  */
-
-/** Generate floating particles inside the hero section */
-export function initParticles() {
-  const container = document.getElementById('particles');
-  if (!container) return;
-
-  for (let i = 0; i < 30; i++) {
-    const particle = document.createElement('div');
-    particle.className = 'particle';
-    particle.style.left = Math.random() * 100 + '%';
-    particle.style.top = Math.random() * 100 + '%';
-    particle.style.animationDelay = Math.random() * 15 + 's';
-    particle.style.animationDuration = 10 + Math.random() * 10 + 's';
-    container.appendChild(particle);
-  }
-}
 
 /** Animate stat counters when they scroll into view */
 export function initStatCounters() {
@@ -63,12 +47,13 @@ export function initScrollReveal() {
   const elements = document.querySelectorAll(selectors);
   if (!elements.length) return;
 
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
+          entry.target.classList.add('is-visible');
         }
       });
     },
@@ -76,9 +61,16 @@ export function initScrollReveal() {
   );
 
   elements.forEach((el) => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    el.classList.add('reveal');
+
+    if (!prefersReducedMotion) {
+      const siblings = Array.from(el.parentElement?.children || []).filter((child) =>
+        child.classList.contains('reveal')
+      );
+      const index = siblings.indexOf(el);
+      el.style.transitionDelay = `${index * 60}ms`;
+    }
+
     observer.observe(el);
   });
 }

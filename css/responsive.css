@@ -10,6 +10,10 @@
     order: -1;
   }
 
+  .about-card {
+    right: 0;
+  }
+
   .mvo-grid {
     grid-template-columns: 1fr;
   }
@@ -18,17 +22,30 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .service-card:first-child {
+    grid-column: 1 / -1;
+  }
+
   .why-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-card:first-child {
+    grid-column: 1 / -1;
   }
 
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .team-card:first-child {
+    grid-column: 1 / -1;
+  }
+
   .process-timeline {
     flex-direction: column;
     gap: 3rem;
+    align-items: center;
   }
 
   .process-timeline::before {
@@ -51,25 +68,50 @@
     top: 100%;
     left: 0;
     width: 100%;
-    background: rgba(15, 15, 26, 0.98);
+    background: var(--mobile-menu-bg);
     flex-direction: column;
     padding: 2rem;
     gap: 1.5rem;
-    backdrop-filter: blur(20px);
+    opacity: 0;
+    transform: translateY(-10px);
+    max-height: 80vh;
+    overflow-y: auto;
+    transition: opacity 0.3s ease, transform 0.3s ease, display 0.3s ease allow-discrete;
+  }
+
+  @starting-style {
+    .nav-links.active {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
   }
 
   .nav-links.active {
     display: flex;
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .mobile-menu-btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .theme-toggle {
+    margin-right: 0.5rem;
   }
 
   .services-grid,
   .why-grid,
   .team-grid {
     grid-template-columns: 1fr;
+  }
+
+  .service-card:first-child,
+  .why-card:first-child,
+  .team-card:first-child {
+    grid-column: auto;
   }
 
   .footer-grid {
@@ -81,10 +123,6 @@
   }
 
   .about-features {
-    grid-template-columns: 1fr;
-  }
-
-  .form-row {
     grid-template-columns: 1fr;
   }
 

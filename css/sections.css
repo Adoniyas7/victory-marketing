@@ -1,6 +1,6 @@
 /* ===== ABOUT ===== */
 .about {
-  background: linear-gradient(180deg, var(--bg) 0%, var(--primary) 100%);
+  background: var(--primary);
 }
 
 .about-grid {
@@ -21,14 +21,14 @@
   border-radius: 24px;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--card-shadow);
 }
 
 .about-image::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(74, 222, 128, 0.2), transparent);
+  background: linear-gradient(135deg, var(--accent-medium), transparent);
   z-index: 1;
   pointer-events: none;
 }
@@ -44,19 +44,23 @@
   position: absolute;
   bottom: -20px;
   right: -20px;
-  background: var(--card-bg);
-  backdrop-filter: blur(20px);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1.5rem;
   max-width: 280px;
   z-index: 2;
+  box-shadow: var(--card-shadow-small);
 }
 
 .about-card h4 {
   color: var(--accent);
   font-size: 1rem;
   margin-bottom: 0.5rem;
+}
+
+.about-card h4 i {
+  margin-right: 0.5rem;
 }
 
 .about-card p {
@@ -100,7 +104,7 @@
 
 /* ===== MVO (Mission, Vision, Objective) ===== */
 .mission-section {
-  background: var(--primary);
+  background: var(--bg);
 }
 
 .mvo-grid {
@@ -112,55 +116,35 @@
 }
 
 .mvo-card {
-  background: var(--card-bg);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 24px;
   padding: 2.5rem;
-  transition: all 0.4s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
-.mvo-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent), transparent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
-}
-
-.mvo-card:hover::before {
-  transform: scaleX(1);
-}
-
 .mvo-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(74, 222, 128, 0.3);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-6px);
+  border-color: var(--accent-strong);
 }
 
-.mvo-icon {
-  width: 60px;
-  height: 60px;
-  background: rgba(74, 222, 128, 0.1);
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-  font-size: 1.5rem;
-  color: var(--accent);
-  border: 1px solid var(--border);
+.mvo-card:first-child {
+  grid-column: auto;
 }
 
 .mvo-card h3 {
   font-size: 1.4rem;
   margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.mvo-card h3 i {
+  color: var(--accent);
+  font-size: 1.1rem;
 }
 
 .mvo-card p {
@@ -171,7 +155,7 @@
 
 /* ===== SERVICES ===== */
 .services {
-  background: var(--bg);
+  background: var(--primary);
 }
 
 .services-grid {
@@ -183,11 +167,11 @@
 }
 
 .service-card {
-  background: var(--card-bg);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 20px;
   padding: 2rem;
-  transition: all 0.4s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease;
   position: relative;
   overflow: hidden;
 }
@@ -198,7 +182,7 @@
   inset: 0;
   background: radial-gradient(
     circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(74, 222, 128, 0.1),
+    var(--accent-glow),
     transparent 50%
   );
   opacity: 0;
@@ -212,27 +196,24 @@
 
 .service-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(74, 222, 128, 0.3);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  border-color: var(--accent-strong);
 }
 
-.service-icon {
-  width: 55px;
-  height: 55px;
-  background: linear-gradient(135deg, rgba(74, 222, 128, 0.15), rgba(74, 222, 128, 0.05));
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.25rem;
-  font-size: 1.4rem;
-  color: var(--accent);
-  border: 1px solid var(--border);
+.service-card:first-child {
+  grid-column: 1 / -1;
 }
 
 .service-card h3 {
   font-size: 1.2rem;
   margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.service-card h3 i {
+  color: var(--accent);
+  font-size: 1rem;
 }
 
 .service-card p {
@@ -261,54 +242,46 @@
 
 /* ===== WHY US ===== */
 .why-us {
-  background: linear-gradient(180deg, var(--primary) 0%, var(--bg) 100%);
+  background: var(--primary);
 }
 
 .why-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .why-card {
-  text-align: center;
+  text-align: left;
   padding: 2.5rem 1.5rem;
-  background: var(--card-bg);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 20px;
-  transition: all 0.4s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .why-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(74, 222, 128, 0.3);
+  transform: translateY(-6px);
+  border-color: var(--accent-strong);
 }
 
-.why-icon {
-  width: 70px;
-  height: 70px;
-  background: rgba(74, 222, 128, 0.1);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem;
-  font-size: 1.8rem;
-  color: var(--accent);
-  border: 2px solid var(--border);
-  transition: all 0.3s ease;
-}
-
-.why-card:hover .why-icon {
-  background: rgba(74, 222, 128, 0.2);
-  box-shadow: 0 0 30px rgba(74, 222, 128, 0.2);
+.why-card:first-child {
+  grid-column: 1 / -1;
 }
 
 .why-card h3 {
   font-size: 1.2rem;
   margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.why-card h3 i {
+  color: var(--accent);
+  font-size: 1rem;
 }
 
 .why-card p {
@@ -336,7 +309,12 @@
   left: 10%;
   right: 10%;
   height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--primary-light), var(--accent));
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    var(--primary-light),
+    var(--accent)
+  );
   z-index: 0;
 }
 
@@ -367,9 +345,9 @@
 }
 
 .process-step:hover .step-number {
-  background: rgba(74, 222, 128, 0.1);
+  background: var(--accent-bg);
   border-color: var(--accent);
-  box-shadow: 0 0 30px rgba(74, 222, 128, 0.2);
+  box-shadow: 0 0 30px var(--accent-glow);
   transform: scale(1.1);
 }
 
@@ -378,8 +356,14 @@
   position: absolute;
   inset: -5px;
   border-radius: 50%;
-  border: 2px dashed rgba(74, 222, 128, 0.2);
+  border: 2px dashed rgba(var(--accent-rgb), 0.2);
   animation: spin 20s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .process-step h3 {
@@ -390,11 +374,12 @@
 .process-step p {
   color: var(--text-muted);
   font-size: 0.9rem;
+  line-height: 1.6;
 }
 
 /* ===== CTA BANNER ===== */
 .cta-banner {
-  background: linear-gradient(135deg, rgba(74, 222, 128, 0.1), rgba(74, 222, 128, 0.02));
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 24px;
   padding: 4rem;
@@ -403,17 +388,6 @@
   margin: 0 auto;
   position: relative;
   overflow: hidden;
-}
-
-.cta-banner::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(74, 222, 128, 0.05), transparent 60%);
-  animation: rotate 20s linear infinite;
 }
 
 .cta-banner h2 {

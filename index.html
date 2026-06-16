@@ -56,24 +56,22 @@
     <link rel="stylesheet" href="css/portfolio.css" />
     <link rel="stylesheet" href="css/whatsapp.css" />
     <link rel="stylesheet" href="css/responsive.css" />
+
+    <script>
+      document.documentElement.classList.add('js');
+    </script>
   </head>
   <body>
 
-    <!-- Loader (static, shows before JS loads) -->
-    <div class="loader" id="loader">
-      <div class="loader-content">
-        <img src="assets/images/logo.png" alt="V" class="loader-logo" />
-        <div class="loader-text">Victory Marketing</div>
-      </div>
-    </div>
+    <a href="#home" class="skip-link">Skip to main content</a>
 
     <!-- Navigation -->
-    <nav id="navbar">
+    <nav id="navbar" aria-label="Main navigation">
       <a href="#" class="nav-logo">
         <img src="assets/images/logo.png" alt="Victory Marketing Logo" />
         <span>Victory <span>Marketing</span></span>
       </a>
-      <ul class="nav-links" id="navLinks">
+      <ul class="nav-links" id="navLinks" aria-label="Navigation links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
@@ -82,8 +80,14 @@
         <li><a href="#contact">Contact</a></li>
         <li><a href="#contact" class="nav-cta">Get Started</a></li>
       </ul>
-      <button class="mobile-menu-btn" id="mobileMenuBtn">
-        <i class="fas fa-bars"></i>
+      <button
+        class="mobile-menu-btn"
+        id="mobileMenuBtn"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <i class="fas fa-bars" aria-hidden="true"></i>
       </button>
     </nav>
 

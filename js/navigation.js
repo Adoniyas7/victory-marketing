@@ -16,17 +16,56 @@ export function initNavigation() {
     });
   }
 
+  // Scroll progress indicator
+  const scrollProgress = document.getElementById('scrollProgress');
+  if (scrollProgress) {
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      scrollProgress.style.width = `${progress}%`;
+    });
+  }
+
   // Mobile menu toggle
   if (mobileMenuBtn && navLinks) {
-    mobileMenuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
+    const toggleMenu = () => {
+      const isOpen = navLinks.classList.toggle('active');
+      mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+      const icon = mobileMenuBtn.querySelector('i');
+      if (icon) {
+        icon.classList.toggle('fa-bars', !isOpen);
+        icon.classList.toggle('fa-xmark', isOpen);
+      }
+    };
+
+    mobileMenuBtn.addEventListener('click', toggleMenu);
 
     // Close mobile menu when clicking a link
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        const icon = mobileMenuBtn.querySelector('i');
+        if (icon) {
+          icon.classList.add('fa-bars');
+          icon.classList.remove('fa-xmark');
+        }
       });
+    });
+
+    // Close mobile menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        const icon = mobileMenuBtn.querySelector('i');
+        if (icon) {
+          icon.classList.add('fa-bars');
+          icon.classList.remove('fa-xmark');
+        }
+        mobileMenuBtn.focus();
+      }
     });
   }
 
@@ -51,4 +90,34 @@ export function initNavigation() {
       }
     });
   });
+
+  // Scroll spy: highlight the nav link whose section is currently in view
+  if (navLinks) {
+    const navLinksArray = Array.from(navLinks.querySelectorAll('a[href^="#"]'));
+    const spySections = document.querySelectorAll('section[id]');
+
+    if (spySections.length && navLinksArray.length) {
+      const spyObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const id = entry.target.id;
+              navLinksArray.forEach((link) => {
+                link.classList.remove('active');
+                if (
+                  link.getAttribute('href') === `#${id}` &&
+                  !link.classList.contains('nav-cta')
+                ) {
+                  link.classList.add('active');
+                }
+              });
+            }
+          });
+        },
+        { rootMargin: '-40% 0px -40% 0px', threshold: 0 }
+      );
+
+      spySections.forEach((section) => spyObserver.observe(section));
+    }
+  }
 }

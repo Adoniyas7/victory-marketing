@@ -1,6 +1,6 @@
 /* ===== PORTFOLIO / CASE STUDIES ===== */
 .portfolio {
-  background: linear-gradient(180deg, var(--primary) 0%, var(--bg) 100%);
+  background: var(--bg);
 }
 
 .portfolio-grid {
@@ -12,18 +12,21 @@
 }
 
 .portfolio-card {
-  background: var(--card-bg);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 20px;
   overflow: hidden;
-  transition: all 0.4s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease;
   position: relative;
 }
 
 .portfolio-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(74, 222, 128, 0.3);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-6px);
+  border-color: var(--accent-strong);
+}
+
+.portfolio-card:first-child {
+  grid-column: 1 / -1;
 }
 
 .portfolio-image {
@@ -41,13 +44,13 @@
 }
 
 .portfolio-card:hover .portfolio-image img {
-  transform: scale(1.08);
+  transform: scale(1.04);
 }
 
 .portfolio-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 40%, rgba(15, 15, 26, 0.8) 100%);
+  background: linear-gradient(180deg, transparent 40%, var(--portfolio-overlay) 100%);
   pointer-events: none;
 }
 
@@ -55,8 +58,7 @@
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background: rgba(74, 222, 128, 0.15);
-  backdrop-filter: blur(10px);
+  background: var(--primary);
   border: 1px solid var(--border);
   color: var(--accent);
   padding: 0.3rem 0.8rem;

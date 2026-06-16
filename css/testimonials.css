@@ -12,8 +12,13 @@
   padding: 1rem 0;
 }
 
+.testimonials-slider:hover,
+.testimonials-slider:focus-within {
+  animation-play-state: paused;
+}
+
 .testimonial-card {
-  background: var(--card-bg);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 20px;
   padding: 2rem;
@@ -50,7 +55,7 @@
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--on-accent);
   font-family: "Outfit", sans-serif;
 }
 

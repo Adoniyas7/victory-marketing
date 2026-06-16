@@ -66,9 +66,6 @@ export class ContentLoader {
     if (logoText) {
       logoText.innerHTML = `${site.brand.name.replace(site.brand.nameAccent, '')} <span>${site.brand.nameAccent}</span>`;
     }
-    // Loader logo
-    const loaderLogo = document.querySelector('.loader-logo');
-    if (loaderLogo) loaderLogo.src = site.brand.logo;
   }
 
   /* ===== HERO ===== */
@@ -81,7 +78,6 @@ export class ContentLoader {
     container.innerHTML = `
       <div class="hero-bg"></div>
       <div class="hero-grid"></div>
-      <div class="floating-particles" id="particles"></div>
       <div class="hero-content">
         <div class="hero-badge">
           <i class="${hero.badge.icon}"></i>
@@ -164,8 +160,7 @@ export class ContentLoader {
       <div class="mvo-grid">
         ${mission.cards.map(card => `
           <div class="mvo-card">
-            <div class="mvo-icon"><i class="${card.icon}"></i></div>
-            <h3>${card.title}</h3>
+            <h3><i class="${card.icon}"></i> ${card.title}</h3>
             <p>${card.text}</p>
           </div>
         `).join('')}
@@ -188,8 +183,7 @@ export class ContentLoader {
       <div class="services-grid">
         ${services.services.map(svc => `
           <div class="service-card">
-            <div class="service-icon"><i class="${svc.icon}"></i></div>
-            <h3>${svc.title}</h3>
+            <h3><i class="${svc.icon}"></i> ${svc.title}</h3>
             <p>${svc.description}</p>
             <ul class="service-list">
               ${svc.items.map(item => `
@@ -217,8 +211,7 @@ export class ContentLoader {
       <div class="why-grid">
         ${whyUs.reasons.map(r => `
           <div class="why-card">
-            <div class="why-icon"><i class="${r.icon}"></i></div>
-            <h3>${r.title}</h3>
+            <h3><i class="${r.icon}"></i> ${r.title}</h3>
             <p>${r.text}</p>
           </div>
         `).join('')}
@@ -345,12 +338,19 @@ export class ContentLoader {
     if (!container) return;
     const { contact } = this.data;
 
-    // Build form fields
-    const halfFields = contact.form.fields.filter(f => f.half);
-    const fullFields = contact.form.fields.filter(f => !f.half);
-    const sel = contact.form.selectField;
-    const msg = contact.form.messageField;
-    const submit = contact.form.submitButton;
+    const renderCard = (item) => {
+      const attrs = item.href
+        ? `href="${item.href}" ${item.external ? 'target="_blank" rel="noopener noreferrer"' : ''}`
+        : '';
+      const tag = item.href ? 'a' : 'div';
+      return `
+        <${tag} class="contact-card" ${attrs}>
+          <div class="contact-icon"><i class="${item.icon}"></i></div>
+          <h4>${item.label}</h4>
+          <p>${item.value}</p>
+        </${tag}>
+      `;
+    };
 
     container.innerHTML = `
       <div class="section-header">
@@ -362,48 +362,9 @@ export class ContentLoader {
         <div class="contact-info">
           <h3>${contact.info.heading}</h3>
           <p>${contact.info.description}</p>
-          ${contact.info.items.map(item => `
-            <div class="contact-item">
-              <div class="contact-icon"><i class="${item.icon}"></i></div>
-              <div>
-                <h4>${item.label}</h4>
-                <p>${item.value}</p>
-              </div>
-            </div>
-          `).join('')}
         </div>
-        <div class="contact-form">
-          <form id="contactForm">
-            <div class="form-row">
-              ${halfFields.map(f => `
-                <div class="form-group">
-                  <label>${f.label}</label>
-                  <input type="${f.type}" placeholder="${f.placeholder}" ${f.required ? 'required' : ''} />
-                </div>
-              `).join('')}
-            </div>
-            ${fullFields.map(f => `
-              <div class="form-group">
-                <label>${f.label}</label>
-                <input type="${f.type}" placeholder="${f.placeholder}" ${f.required ? 'required' : ''} />
-              </div>
-            `).join('')}
-            <div class="form-group">
-              <label>${sel.label}</label>
-              <select>
-                <option>${sel.placeholder}</option>
-                ${sel.options.map(opt => `<option>${opt}</option>`).join('')}
-              </select>
-            </div>
-            <div class="form-group">
-              <label>${msg.label}</label>
-              <textarea placeholder="${msg.placeholder}"></textarea>
-            </div>
-            <button type="submit" class="submit-btn" data-success="${contact.form.successMessage}">
-              <i class="${submit.icon}"></i>
-              ${submit.label}
-            </button>
-          </form>
+        <div class="contact-cards">
+          ${contact.info.items.map(renderCard).join('')}
         </div>
       </div>
     `;
