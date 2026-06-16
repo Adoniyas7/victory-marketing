@@ -6,7 +6,6 @@
 import { ContentLoader } from './content-loader.js';
 import { initNavigation } from './navigation.js';
 import { initStatCounters, initScrollReveal, initServiceCardGlow } from './animations.js';
-import { initContactForm } from './form.js';
 
 async function init() {
   const loader = new ContentLoader();
@@ -23,7 +22,6 @@ async function init() {
     initStatCounters();
     initScrollReveal();
     initServiceCardGlow();
-    initContactForm();
   } catch (error) {
     console.error('Failed to initialize website:', error);
   }
