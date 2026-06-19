@@ -304,6 +304,7 @@ ${"" /*
             <div class="team-avatar">${m.initials}</div>
             <h3>${m.name}</h3>
             <div class="team-role">${m.role}</div>
+            ${m.education ? `<div class="team-education">${m.education}</div>` : ''}
             <p>${m.bio}</p>
             <div class="team-social">
               ${m.social.linkedin ? `<a href="${m.social.linkedin}"><i class="fab fa-linkedin-in"></i></a>` : ''}
