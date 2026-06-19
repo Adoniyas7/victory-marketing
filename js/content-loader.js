@@ -98,14 +98,16 @@ ${"" /*
             </a>
           `).join('')}
         </div>
+        <!-- Stats hidden (uncomment when needed)
         <div class="hero-stats">
-          ${hero.stats.map(stat => `
+          ${hero.stats.map(stat => `  
             <div class="stat-item">
               <span class="stat-number" data-target="${stat.target}" data-suffix="${stat.suffix}">0</span>
               <span class="stat-label">${stat.label}</span>
             </div>
           `).join('')}
         </div>
+        -->
       </div>
     `;
   }
@@ -118,7 +120,6 @@ ${"" /*
 
     container.innerHTML = `
       <div class="section-header">
-        <span class="section-tag">${about.header.tag}</span>
         <h2>${about.header.title}</h2>
         <p>${about.header.description}</p>
       </div>
